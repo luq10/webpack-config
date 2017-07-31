@@ -1,6 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const md5File = require('md5-file');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlStringReplace = require('html-string-replace-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -42,6 +45,17 @@ const config = {
         }),
         new HtmlWebpackPlugin({
             template: './index.html'
+        }),
+        // Add query string hash to config.json loaded in index.html
+        new HtmlStringReplace({
+            patterns: [
+                {
+                    match: /src="..\/config.js"/g,
+                    replacement: function (match) {
+                        return 'src="../config.js?hash=' + md5File.sync('config.js') + '"';
+                    }
+                },
+            ]
         }),
         new CopyWebpackPlugin([{
             from: './assets',
