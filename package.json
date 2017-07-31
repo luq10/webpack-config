@@ -15,6 +15,7 @@
     "babel-preset-env": "^1.5.2",
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
+    "file-loader": "^0.11.2",
     "html-string-replace-webpack-plugin": "^1.0.5",
     "html-webpack-plugin": "^2.28.0",
     "webpack": "^3.4.1"

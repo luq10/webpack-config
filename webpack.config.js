@@ -20,7 +20,7 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].js',
-        // publicPath: 'dist/'
+        publicPath: './'
     },
     module: {
         rules: [
@@ -28,6 +28,10 @@ const config = {
                 use: 'babel-loader',
                 test: /\.js$/,
                 exclude: /node_modules/
+            },
+            {
+                use: 'file-loader?name=[path][name].[ext]',
+                test: /\.(jpg|png|eot|svg|ttf|woff|woff2|otf|ico)$/
             }
         ]
     },
@@ -57,11 +61,7 @@ const config = {
                     }
                 },
             ]
-        }),
-        new CopyWebpackPlugin([{
-            from: './assets',
-            to: './assets'
-        }])
+        })
     ]
 };
 
