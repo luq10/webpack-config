@@ -32,6 +32,14 @@ const config = {
             {
                 use: 'file-loader?name=[path][name].[ext]',
                 test: /\.(jpg|png|eot|svg|ttf|woff|woff2|otf|ico)$/
+            },
+            {
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ],
+                test: /\.scss$/
             }
         ]
     },
