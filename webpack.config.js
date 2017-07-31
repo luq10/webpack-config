@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const md5File = require('md5-file');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlStringReplace = require('html-string-replace-webpack-plugin');
@@ -52,7 +51,9 @@ const config = {
                 {
                     match: /src="..\/config.js"/g,
                     replacement: function (match) {
-                        return 'src="../config.js?hash=' + md5File.sync('config.js') + '"';
+                        const timestamp = +new Date();
+
+                        return 'src="../config.js?hash=' + timestamp + '"';
                     }
                 },
             ]
