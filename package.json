@@ -14,7 +14,6 @@
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.2",
     "clean-webpack-plugin": "^0.1.16",
-    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "file-loader": "^0.11.2",
     "html-string-replace-webpack-plugin": "^1.0.5",
