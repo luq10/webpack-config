@@ -5,8 +5,15 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = {
+    context: path.resolve(__dirname, 'src'),
+    resolve: {
+        extensions: ['.js']
+    },
+    // Global variable 'config' (defined in /config.js)
+    // can be import from 'config'
+    externals: 'config',
     entry: {
-        bundle: './src/index.js'
+        bundle: './index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -34,21 +41,13 @@ const config = {
             name: 'manifest'
         }),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './index.html'
         }),
         new CopyWebpackPlugin([{
-            from: './src/assets',
+            from: './assets',
             to: './assets'
         }])
     ]
 };
-
-/**
- *
- * TODO:
- *
- * 1. SASS
- * 3. maps for bundles .js
- */
 
 module.exports = config;
