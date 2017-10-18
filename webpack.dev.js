@@ -1,10 +1,18 @@
+const path = require('path');
 const webpack = require('webpack');
 const Merge = require('webpack-merge');
+
 const CommonConfig = require('./webpack.common.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = Merge(CommonConfig, {
     devtool: 'cheap-module-source-map',
+	devServer: {
+		publicPath: path.resolve(__dirname, '/'),
+		// Server can be visible also by your IP address in LAN
+		host: '0.0.0.0',
+		port: 3000
+	},
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {
@@ -14,7 +22,7 @@ const config = Merge(CommonConfig, {
 
 		// Copy app.config to /dist folder.
 		//
-		// On production env this thinks will make by CI
+		// On production env, this thing will be made by CI
         new CopyWebpackPlugin([
             { from: '../app.config.js', to: './app.config.js' }
         ])

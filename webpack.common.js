@@ -56,11 +56,11 @@ const config = {
         new HtmlWebpackPlugin({
             template: './index.html'
         }),
-        // Add query string hash to config.json loaded in index.html
+        // Add query string hash to app.config.json loaded in index.html
         new HtmlStringReplace({
             patterns: [
                 {
-                    match: /src="..\/config.js"/g,
+                    match: /src=".\/app.config.js"/g,
                     replacement: function (match) {
                         const timestamp = +new Date();
 
