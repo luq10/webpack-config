@@ -64,7 +64,7 @@ const config = {
                     replacement: function (match) {
                         const timestamp = +new Date();
 
-                        return 'src="../config.js?hash=' + timestamp + '"';
+                        return 'src="./app.config.js?hash=' + timestamp + '"';
                     }
                 },
             ]
