@@ -31,9 +31,9 @@ const config = merge(CommonConfig, {
 		// Copy app.config to /dist folder.
 		//
 		// On production env, this thing will be made by CI
-        new CopyWebpackPlugin([
-            { from: '../app.config.js', to: './app.config.js' }
-        ])
+		new CopyWebpackPlugin([
+			{ from: '../app.config.js', to: './app.config.js' }
+		])
     ]
 });
 
