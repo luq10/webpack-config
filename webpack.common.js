@@ -10,9 +10,9 @@ const config = {
     resolve: {
         extensions: ['.js']
     },
-    // Global variable 'config' (defined in /config.js)
-    // can be import from 'config'
-    externals: 'config',
+    // Global variable 'appConfig' (defined in ./app.config.js)
+    // can be import from 'appConfig'
+    externals: 'appConfig',
     entry: {
         bundle: './index.js'
     },
