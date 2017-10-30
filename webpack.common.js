@@ -8,13 +8,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const config = {
     context: path.resolve(__dirname, 'src'),
     resolve: {
-        extensions: ['.js']
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
-    // Global variable 'appConfig' (defined in ./app.config.js)
-    // can be import from 'appConfig'
-    externals: 'appConfig',
+    // Global variable 'config' (defined in ./src/app.config.js)
+    // can be import from 'config'
+    externals: 'config',
     entry: {
-        bundle: './index.js'
+        bundle: './index.tsx'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -24,8 +24,8 @@ const config = {
     module: {
         rules: [
             {
-                use: 'babel-loader',
-                test: /\.js$/,
+                use: 'ts-loader',
+                test: /\.tsx?$/,
                 exclude: /node_modules/
             },
             {
@@ -60,11 +60,11 @@ const config = {
         new HtmlStringReplace({
             patterns: [
                 {
-                    match: /src=".\/app.config.js"/g,
+                    match: /src="\.\/config\.js"/g,
                     replacement: function (match) {
                         const timestamp = +new Date();
 
-                        return 'src="./app.config.js?hash=' + timestamp + '"';
+                        return 'src="./config.js?hash=' + timestamp + '"';
                     }
                 },
             ]
