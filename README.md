@@ -1,9 +1,9 @@
 # Technology 
 
 1. ES2015+ (Babel)
-2. No any framework - only Vanila JS
+2. No framework - only Vanila JS
 3. SASS
-4. Mot Module Replacement on all SASS files 
+4. Hot Module Replacement on all SASS files 
 
 # Development
 
@@ -32,8 +32,8 @@ Just run `npm start -- --open`
 
 # Build
 
-To build production version just run `npm run build`, 
-after that in `/dist` directory you have prod version.
+To build production version just run `npm run build`, after that, 
+in `/dist` directory you have prod version.
 
 **Watch out!**
 
@@ -52,12 +52,12 @@ on next deploy stage ((1) test > (2) staging > (3) prod) and create different `/
 You can still use variables defined by *webpack.DefinePlugin* 
 (for example `process.env.NODE_ENV` which can be "*development*" - `npm start` and "*production*" - `npm run build`) 
 in your code. But, you must remember that `process.env.NODE_ENV === "production"` will be also on 
-(1) test and (2) staging deploy stage.
+(1) test, (2) staging and (3) prod deploy stage.
 
-If you want run some code only in (3) prod deploy stage just create flag in your `/app.config.js`.
+If you want run some code only in (3) prod deploy stage, just create flag in your `/app.config.js`.
 
 ## Debug development build
 
-Normaly, delelopment version of build (run by `npm start`) is served from memory (by webpack-dev-server)
-sometime you want to see how this served files looked. For this job you can run `npm run build:dev`, after that
+Normaly, delelopment version of build (run by `npm start`) is served from memory (by webpack-dev-server), 
+sometime you might want to see how this served files looked. For this job you can run `npm run build:dev`, after that
 in `/dist` you can see all files served by `npm start` script
