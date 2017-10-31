@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.dev.js",
-    "start:test": "webpack --config ./webpack.dev.js",
     "start:fp": "webpack-dev-server --config ./webpack.dev.js --port 0",
-    "build": "webpack --config ./webpack.prod.js"
+    "build": "webpack --config ./webpack.prod.js",
+    "build:dev": "webpack --config ./webpack.dev.js"
   },
   "author": "",
   "license": "ISC",
