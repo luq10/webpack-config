@@ -60,7 +60,7 @@ const config = {
     new HtmlStringReplace({
       patterns: [
         {
-          match: /src=".\/app.config.js"/g,
+          match: /src=".\/app\.config\.js"/g,
           replacement: function (match) {
             const timestamp = +new Date();
 
