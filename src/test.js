@@ -8,11 +8,11 @@ let i = 0;
 
 const button = document.createElement('button');
 button.innerText = 'click';
-button.addEventListener('click', function(){
-	const span = document.createElement('span');
-	span.innerText = ++i;
+button.addEventListener('click', function () {
+  const span = document.createElement('span');
+  span.innerText = ++i;
 
-	document.body.appendChild(span);
+  document.body.appendChild(span);
 });
 
 document.body.appendChild(button);
