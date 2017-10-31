@@ -1,7 +1,7 @@
 # Technology 
 
-1. ES2015+ (Babel)
-2. No framework - only Vanila JS
+1. Typescript
+2. React framework
 3. SASS
 4. Hot Module Replacement on all SASS files 
 

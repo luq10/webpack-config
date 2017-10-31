@@ -5,13 +5,16 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es5",
-    "jsx": "react"
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es2015",
+      "es5",
+      "es6"
+    ]
   },
   "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
+    "src/**/*",
+    "types/**/*.d.ts"
   ]
 }
