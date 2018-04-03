@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.dev.js",
     "start:fp": "webpack-dev-server --config ./webpack.dev.js --port 0",
+    "start:prod": "npm run build && cp ./app.config.js ./dist && node ./server",
     "build": "webpack --config ./webpack.prod.js",
     "build:dev": "webpack --config ./webpack.dev.js"
   },
@@ -29,6 +30,9 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "http-proxy-middleware": "^0.18.0",
     "lodash": "^4.17.4",
     "underscore": "^1.8.3"
   }

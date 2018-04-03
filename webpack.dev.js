@@ -1,9 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const bodyParser = require('body-parser');
 
 const CommonConfig = require('./webpack.common.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const proxyConfig = require('./server/proxy.config');
 
 const config = merge(CommonConfig, {
   devtool: 'cheap-module-source-map',
@@ -12,7 +14,13 @@ const config = merge(CommonConfig, {
     // Server can be visible also by your IP address in LAN
     host: '0.0.0.0',
     port: 3000,
-    hot: true
+    hot: true,
+    setup: (app) => {
+      app.use(bodyParser.json())
+    },
+    proxy: {
+      [proxyConfig.url]: proxyConfig.data
+    }
   },
   output: merge(CommonConfig.output, {
     // Cannot use [chunkhash] for chunk when use HMR
