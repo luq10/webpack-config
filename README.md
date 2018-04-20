@@ -70,4 +70,5 @@ in `/dist` you can see all files served by `npm start` script
 
 ## Linting code
 
-Just run `npm run lint`.
+Just run `npm run lint`. Before each `git commit` all files in git staged will be linted.
+If there are any of error, commit will not execute. 
