@@ -19,6 +19,15 @@ const config = merge(CommonConfig, {
     // Cannot use [chunkhash] for chunk when use HMR
     filename: '[name].[hash].js'
   }),
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+    ],
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

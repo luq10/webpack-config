@@ -67,3 +67,7 @@ If you want run some code only in (3) prod deploy stage, just create flag in you
 Normaly, delelopment version of build (run by `npm start`) is served from memory (by webpack-dev-server), 
 sometime you might want to see how this served files looked. For this job you can run `npm run build:dev`, after that
 in `/dist` you can see all files served by `npm start` script
+
+## Linting code
+
+Just run `npm run lint`.

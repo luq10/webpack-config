@@ -18,6 +18,6 @@ button.addEventListener('click', function () {
 document.body.appendChild(button);
 
 // Some comments
-console.log('test');
-console.log(process.env.NODE_ENV);
+// console.log('test');
+// console.log(process.env.NODE_ENV);
 document.body.appendChild(img);

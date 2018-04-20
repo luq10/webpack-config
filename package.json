@@ -7,18 +7,22 @@
     "start": "webpack-dev-server --config ./webpack.dev.js",
     "start:fp": "webpack-dev-server --config ./webpack.dev.js --port 0",
     "build": "webpack --config ./webpack.prod.js",
-    "build:dev": "webpack --config ./webpack.dev.js"
+    "build:dev": "webpack --config ./webpack.dev.js",
+    "lint": "eslint ./src"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.4",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.5.3",
