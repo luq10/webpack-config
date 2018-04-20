@@ -7,6 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = merge(CommonConfig, {
   devtool: 'cheap-module-source-map',
+  mode: 'development',
   devServer: {
     publicPath: path.resolve(__dirname, '/'),
     // Server can be visible also by your IP address in LAN
