@@ -25,8 +25,7 @@ If you want start server on some free port, you can run `npm run start:fp`
 
 By default dev server is visible on LAN, so you can:
 
-1. check your IP (On Ubuntu `ip route get 8.8.8.8 | awk '{print $NF; exit}'`
-`),
+1. check your IP (On Ubuntu `ip route get 8.8.8.8 | awk '{print $NF; exit}'`),
 1. run `npm start` 
 1. send someone in your LAN, url to `YOUR_IP:3000` 
 
