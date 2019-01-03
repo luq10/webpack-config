@@ -12,7 +12,7 @@ const config = {
   // can be import from 'appConfig'
   externals: 'appConfig',
   entry: {
-    bundle: './index.js'
+    bundle: './index.jsx'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

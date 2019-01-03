@@ -1,13 +1,15 @@
 module.exports = {
   extends: [
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:react/recommended",
   ],
   env: {
     browser: true,
     es6: true
   },
   globals: {
-    "process": true
+    "process": true,
+    "module": true,
   },
   parser: "babel-eslint",
   plugins: [
