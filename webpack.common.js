@@ -45,7 +45,14 @@ const config = {
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
+          'sass-loader',
+          // Share SASS variables, mixins and functions with all .sass files
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(__dirname, 'src/assets/styles/sass-resources.scss'),
+            },
+          },
         ],
         test: /\.scss$/
       }

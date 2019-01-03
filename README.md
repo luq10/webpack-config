@@ -19,7 +19,7 @@ By default server start on port `3000`.
 
 ## Change server port 
 
-Just run `yarn start -- --port=8080`.
+Just run `yarn start --port 8080`.
 
 If you want start server on some free port, you can run `yarn run start:fp`
 

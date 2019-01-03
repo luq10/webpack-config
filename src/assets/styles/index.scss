@@ -1,5 +1,4 @@
-$color: red;
-
 body {
-  background: darken($color, 20%);
+  background: darken($primary, 20%);
+  color: $secondary;
 }

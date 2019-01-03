@@ -8,7 +8,7 @@
     "start:fp": "webpack-dev-server --config ./webpack.dev.js --port 0",
     "build": "webpack --config ./webpack.prod.js",
     "build:dev": "webpack --config ./webpack.dev.js",
-    "lint": "eslint ./src",
+    "lint": "eslint ./src --ext .js --ext .jsx",
     "test": "echo \"No test specified\" && exit 0"
   },
   "husky": {
@@ -21,7 +21,7 @@
       "eslint"
     ]
   },
-  "author": "",
+  "author": "Łukasz Sałajczyk",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -30,6 +30,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^1.0.0",
+    "compression-webpack-plugin": "^2.0.0",
     "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^2.1.0",
     "eslint": "^5.11.1",
@@ -40,6 +41,7 @@
     "lint-staged": "^8.1.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^7.0.1",
+    "sass-resources-loader": "^2.0.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.6.0",
     "webpack-cli": "^3.2.0",

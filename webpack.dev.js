@@ -25,6 +25,9 @@ const config = merge(CommonConfig, {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
+        options: {
+          emitWarning: true,
+        },
       },
     ],
   },
@@ -42,7 +45,8 @@ const config = merge(CommonConfig, {
     //
     // On production env, this thing will be made by CI
     new CopyWebpackPlugin([
-      {from: '../app.config.js', to: './app.config.js'}
+      {from: '../app.config.js', to: './app.config.js'},
+      {from: './assets/images/favicon.png', to: './assets/images/favicon.png'}
     ])
   ]
 });
