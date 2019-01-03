@@ -14,8 +14,6 @@ By default server start on port `3000`.
 ## App config
 * The file `app.config.js` should defined in root directory.
 * See `app.config.js.dist` to see how it should look like
-* It consists of things related to environment like API urls, Client IDs for OAuth etc. Its not bundled with other scripts, as this makes it easier to populate it across different environments during CI/CD process
-* **IMPORTANT**: keep the file synchronized with type definition located in `/types/appConfig.d.ts`
 
 ## Change server port 
 
@@ -34,7 +32,7 @@ By default dev server is visible on LAN, so you can:
 
 ## Run server and open in default browser
 
-Just run `yarn start -- --open`
+Just run `yarn start --open`
 
 # Build
 
