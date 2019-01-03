@@ -7,8 +7,8 @@
 
 # Development
 
-* Install dependency by `npm install`
-* Now you can run `npm start` to start development server (webpack-dev-server) on your machine.
+* Install dependency by `yarn`
+* Now you can run `yarn start` to start development server (webpack-dev-server) on your machine.
 By default server start on port `3000`.
 
 ## App config
@@ -19,9 +19,9 @@ By default server start on port `3000`.
 
 ## Change server port 
 
-Just run `npm start -- --port=8080`.
+Just run `yarn start -- --port=8080`.
 
-If you want start server on some free port, you can run `npm run start:fp`
+If you want start server on some free port, you can run `yarn run start:fp`
 
 ## Share server by LAN
 
@@ -29,16 +29,16 @@ By default dev server is visible on LAN, so you can:
 
 1. check your IP (On Ubuntu `ip route get 8.8.8.8 | awk '{print $NF; exit}'`
 `),
-1. run `npm start` 
+1. run `yarn start` 
 1. send someone in your LAN, url to `YOUR_IP:3000` 
 
 ## Run server and open in default browser
 
-Just run `npm start -- --open`
+Just run `yarn start -- --open`
 
 # Build
 
-To build production version just run `npm run build`, after that, 
+To build production version just run `yarn run build`, after that, 
 in `/dist` directory you have prod version.
 
 **Watch out!**
@@ -56,7 +56,7 @@ on next deploy stage ((1) test > (2) staging > (3) prod) and create different `/
 **But Watch out!**
 
 You can still use variables defined by *webpack.DefinePlugin* 
-(for example `process.env.NODE_ENV` which can be "*development*" - `npm start` and "*production*" - `npm run build`) 
+(for example `process.env.NODE_ENV` which can be "*development*" - `yarn start` and "*production*" - `yarn run build`) 
 in your code. But, you must remember that `process.env.NODE_ENV === "production"` will be also on 
 (1) test, (2) staging and (3) prod deploy stage.
 
@@ -64,11 +64,11 @@ If you want run some code only in (3) prod deploy stage, just create flag in you
 
 ## Debug development build
 
-Normaly, delelopment version of build (run by `npm start`) is served from memory (by webpack-dev-server), 
-sometime you might want to see how this served files looked. For this job you can run `npm run build:dev`, after that
-in `/dist` you can see all files served by `npm start` script
+Normaly, delelopment version of build (run by `yarn start`) is served from memory (by webpack-dev-server), 
+sometime you might want to see how this served files looked. For this job you can run `yarn run build:dev`, after that
+in `/dist` you can see all files served by `yarn start` script
 
 ## Linting code
 
-Just run `npm run lint`. Before each `git commit` all files in git staged will be linted.
+Just run `yarn run lint`. Before each `git commit` all files in git staged will be linted.
 If there are any of error, commit will not execute. 
