@@ -34,6 +34,14 @@ By default dev server is visible on LAN, so you can:
 
 Just run `yarn start --open`
 
+## Story book
+
+You can easily develop and browser your UI components by Storybook ([https://github.com/storybooks/storybook]).
+
+Just run `yarn run storybook`
+
+All stories should be in `/stories`
+
 # Build
 
 To build production version just run `yarn run build`, after that, 

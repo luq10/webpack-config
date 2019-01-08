@@ -9,7 +9,8 @@
     "build": "webpack --config ./webpack.prod.js",
     "build:dev": "webpack --config ./webpack.dev.js",
     "lint": "eslint ./src --ext .js --ext .jsx",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "husky": {
     "hooks": {
@@ -24,6 +25,8 @@
   "author": "Łukasz Sałajczyk",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/addon-info": "^4.1.4",
+    "@storybook/react": "^4.1.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "7",
