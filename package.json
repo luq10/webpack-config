@@ -18,8 +18,8 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json}": [
-      "yarn run lint"
+    "src/**/*.{js,jsx}": [
+      "eslint"
     ]
   },
   "author": "Łukasz Sałajczyk",
