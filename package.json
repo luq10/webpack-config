@@ -19,7 +19,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json}": [
-      "eslint"
+      "yarn run lint"
     ]
   },
   "author": "Łukasz Sałajczyk",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
@@ -60,6 +61,8 @@
     "lodash": "^4.17.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-hot-loader": "^4.6.3"
+    "react-hot-loader": "^4.6.3",
+    "react-loadable": "^5.5.0",
+    "react-router-dom": "^4.3.1"
   }
 }

@@ -15,6 +15,11 @@ module.exports = {
   plugins: [
     "class-property",
   ],
+  "settings": {
+    "react": {
+      "version": "16.7.0"
+    }
+  },
   rules: {
     "quotes": ["error", "single", { allowTemplateLiterals: true }],
     "prefer-const": "error",

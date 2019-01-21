@@ -13,7 +13,8 @@ const config = merge(CommonConfig, {
     // Server can be visible also by your IP address in LAN
     host: '0.0.0.0',
     port: 3000,
-    hot: true
+    hot: true,
+    historyApiFallback: true,
   },
   output: merge(CommonConfig.output, {
     // Cannot use [chunkhash] for chunk when use HMR

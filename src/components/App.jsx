@@ -1,36 +1,24 @@
 import { hot } from 'react-hot-loader';
 import React from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-import img from '../assets/images/200x200.jpg';
-import './App.scss';
+import AsyncIndex from '../pages/AsyncIndex';
+import AsyncAbout from '../pages/AsyncAbout';
 
 class App extends React.Component {
-  state = {
-    data: null,
-  };
-
-  async componentDidMount() {
-    const data = await this.foo();
-
-    this.setState({data});
-  }
-
-  async foo() {
-    return await new Promise((resolve) => {
-      setTimeout(() => resolve('some async data'), 1000);
-    });
-  }
-
   render() {
-    const {data} = this.state;
-
     return (
-      <div className="app">
-        <h1>Hello world</h1>
-        <h3>{data}</h3>
+      <BrowserRouter>
+        <div>
+          <ul>
+            <li><Link to="/">Index</Link></li>
+            <li><Link to="/about/">About</Link></li>
+          </ul>
 
-        <img src={img} alt="Example"/>
-      </div>
+          <Route path="/" exact component={AsyncIndex} />
+          <Route path="/about/" component={AsyncAbout} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
