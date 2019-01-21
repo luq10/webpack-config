@@ -1,5 +1,5 @@
 // For async/await
-import 'babel-polyfill';
+import '@babel/polyfill';
 
 import sum from './sum';
 import appConfig from 'appConfig';
