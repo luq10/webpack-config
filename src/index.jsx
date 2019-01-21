@@ -1,5 +1,5 @@
 // For async/await
-import 'babel-polyfill';
+import '@babel/polyfill';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
