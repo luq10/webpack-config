@@ -10,6 +10,7 @@ module.exports = {
   globals: {
     "process": true,
     "module": true,
+    "devToolsExtension": true,
   },
   parser: "babel-eslint",
   plugins: [

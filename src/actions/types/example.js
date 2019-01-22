@@ -1,0 +1,16 @@
+export const EXAMPLE = {
+  GET: {
+    START: 'EXAMPLE/GET/START',
+    SUCCESS: 'EXAMPLE/SUCCESS/START',
+    ERROR: 'EXAMPLE/ERROR/START',
+  },
+  REMOVE: {
+    START: 'EXAMPLE/REMOVE/START',
+    SUCCESS: 'EXAMPLE/REMOVE/START',
+    ERROR: 'EXAMPLE/REMOVE/START',
+  }
+};
+
+export default {
+  EXAMPLE,
+};

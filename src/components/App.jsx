@@ -1,36 +1,15 @@
 import { hot } from 'react-hot-loader';
 import React from 'react';
+import { Provider } from 'react-redux';
 
-import img from '../assets/images/200x200.jpg';
-import './App.scss';
+import store from '../store';
 
 class App extends React.Component {
-  state = {
-    data: null,
-  };
-
-  async componentDidMount() {
-    const data = await this.foo();
-
-    this.setState({data});
-  }
-
-  async foo() {
-    return await new Promise((resolve) => {
-      setTimeout(() => resolve('some async data'), 1000);
-    });
-  }
-
   render() {
-    const {data} = this.state;
-
     return (
-      <div className="app">
+      <Provider store={store}>
         <h1>Hello world</h1>
-        <h3>{data}</h3>
-
-        <img src={img} alt="Example"/>
-      </div>
+      </Provider>
     );
   }
 }

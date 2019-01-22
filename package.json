@@ -57,9 +57,15 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "lodash": "^4.17.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-hot-loader": "^4.6.3"
+    "react-hot-loader": "^4.6.3",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.1",
+    "redux-logic": "^2.1.1"
   }
 }

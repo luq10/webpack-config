@@ -5,6 +5,14 @@
 3. SASS
 4. Hot Module Replacement (for SASS and components)
 
+# Inluded libs
+
+1. React Router - as router manager
+1. React Redux - as state manager
+1. React Router Redux - for changing routes by action 
+1. Redux Logic - as middleware for async action in redux 
+1. Axios - for HTTP request
+
 # Development
 
 * Install dependency by `yarn`
