@@ -17,7 +17,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js',
-    publicPath: './',
+    publicPath: '/',
   },
   optimization: {
     splitChunks: {
