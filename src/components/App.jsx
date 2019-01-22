@@ -2,7 +2,7 @@ import { hot } from 'react-hot-loader';
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-const Index = React.lazy(() => import(/* webpackChunkName: "page.index" */'../pages/Index'));
+const Home = React.lazy(() => import(/* webpackChunkName: "page.home" */'../pages/Home'));
 const About = React.lazy(() => import(/* webpackChunkName: "page.about" */'../pages/About'));
 
 class App extends React.Component {
@@ -11,7 +11,7 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           <ul>
-            <li><Link to="/">Index</Link></li>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
           </ul>
 
@@ -22,7 +22,7 @@ class App extends React.Component {
 
               Fix for that will be in the next version of react-router (4.4.0)
             */}
-            <Route path="/" exact component={Index} />
+            <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
           </React.Suspense>
         </div>
