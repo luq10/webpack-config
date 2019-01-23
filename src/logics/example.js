@@ -10,10 +10,10 @@ export const get = createLogic({
     failType: EXAMPLE.GET.ERROR,
   },
 
-  process() {
-    return Promise.resolve({
-      action: 'get'
-    });
+  process({api, action}) {
+    const {page} = action.payload;
+
+    return api.example.get(page);
   },
 });
 
@@ -25,10 +25,13 @@ export const remove = createLogic({
     failType: EXAMPLE.REMOVE.ERROR,
   },
 
-  process() {
-    return Promise.resolve({
-      action: 'remove'
-    });
+  process({api, action}) {
+    const {id} = action.payload;
+
+    return api.example.remove(id)
+      .then(() => ({
+        removedId: id,
+      }));
   },
 });
 

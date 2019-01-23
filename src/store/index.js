@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore, compose } from 'redux';
 import { createLogicMiddleware } from 'redux-logic';
 
-import api from '../services/api';
+import api from '../services/apiInstance';
 
 import reducers from '../reducers';
 import logics from '../logics';
