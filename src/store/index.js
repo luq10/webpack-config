@@ -6,7 +6,7 @@ import api from '../services/apiInstance';
 import reducers from '../reducers';
 import logics from '../logics';
 
-const isDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ !== undefined;
+const isDevTools = process.env.NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION__ !== undefined;
 const logicMiddleware = createLogicMiddleware(logics, { api });
 const middleware = applyMiddleware(logicMiddleware);
 
