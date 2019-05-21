@@ -1,6 +1,8 @@
 import { hot } from 'react-hot-loader';
 import React from 'react';
 
+import HookComponent from './HookComponent';
+
 import img from '../assets/images/200x200.jpg';
 import './App.scss';
 
@@ -27,6 +29,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <h1>Hello world</h1>
+        <HookComponent/>
         <h3>{data}</h3>
 
         <img src={img} alt="Example"/>

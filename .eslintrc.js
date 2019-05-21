@@ -14,6 +14,7 @@ module.exports = {
   parser: "babel-eslint",
   plugins: [
     "class-property",
+    "react-hooks",
   ],
   rules: {
     "quotes": ["error", "single", { allowTemplateLiterals: true }],
@@ -24,5 +25,7 @@ module.exports = {
     "semi": ["error", "always"],
     "max-len": ["error", {code: 120}],
     "class-property/class-property-semicolon": ["error", "always"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
 };
