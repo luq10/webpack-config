@@ -59,7 +59,7 @@ const config = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin('dist'),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './index.html',
       // Add query string hash to app.config.js loaded in index.html
