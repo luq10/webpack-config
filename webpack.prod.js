@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const Merge = require('webpack-merge');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const CommonConfig = require('./webpack.common.js');
 
@@ -26,6 +27,11 @@ const config = Merge(CommonConfig, {
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      // Add query string hash to app.config.js loaded in index.html
+      configHash: +new Date()
     })
   ]
 });

@@ -4,7 +4,11 @@ import React from 'react';
 import HookComponent from './HookComponent';
 
 import img from '../assets/images/200x200.jpg';
+import foo from '../assets/stats.json';
 import './App.scss';
+
+// eslint-disable-next-line
+console.log('some big json', foo);
 
 class App extends React.Component {
   state = {

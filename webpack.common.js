@@ -1,6 +1,5 @@
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
@@ -59,12 +58,7 @@ const config = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      // Add query string hash to app.config.js loaded in index.html
-      configHash: +new Date()
-    })
+    new CleanWebpackPlugin()
   ]
 };
 

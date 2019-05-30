@@ -1,9 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const CommonConfig = require('./webpack.common.js');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = merge(CommonConfig, {
   devtool: 'cheap-module-source-map',
@@ -47,7 +48,13 @@ const config = merge(CommonConfig, {
     new CopyWebpackPlugin([
       {from: '../app.config.js', to: './app.config.js'},
       {from: './assets/images/favicon.png', to: './assets/images/favicon.png'}
-    ])
+    ]),
+
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      // Add query string hash to app.config.js loaded in index.html
+      configHash: +new Date()
+    })
   ]
 });
 
