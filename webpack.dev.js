@@ -19,6 +19,11 @@ const config = merge(CommonConfig, {
     // Cannot use [chunkhash] for chunk when use HMR
     filename: '[name].[hash].js'
   }),
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
+  },
   module: {
     rules: [
       {
