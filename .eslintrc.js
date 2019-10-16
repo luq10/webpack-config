@@ -26,6 +26,17 @@ module.exports = {
     "max-len": ["error", {code: 120}],
     "class-property/class-property-semicolon": ["error", "always"],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/sort-comp": ["error", {
+      'order': [
+        'static-methods',
+        'instance-variables',
+        'lifecycle',
+        '/^on.+$/',
+        'everything-else',
+        '/^render.+$/',
+        'render'
+      ]
+    }]
   },
 };
