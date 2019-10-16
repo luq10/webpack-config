@@ -38,7 +38,6 @@ const config = merge(CommonConfig, {
       }
     }),
 
-    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
 
     // Copy app.config to /dist folder.
