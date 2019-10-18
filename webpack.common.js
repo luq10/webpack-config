@@ -54,8 +54,9 @@ const config = {
             },
           },
         ],
-        test: /\.scss$/
-      }
+        test: /\.scss$/,
+        exclude: /\.module\.scss$/,
+      },
     ]
   },
   plugins: [

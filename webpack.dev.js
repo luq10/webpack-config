@@ -34,6 +34,27 @@ const config = merge(CommonConfig, {
           emitWarning: true,
         },
       },
+      {
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+            },
+          },
+          'sass-loader',
+          // Share SASS variables, mixins and functions with all .sass files
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(__dirname, 'src/assets/styles/sass-resources.scss'),
+            },
+          },
+        ],
+        test: /\.module\.scss$/
+      }
     ],
   },
   plugins: [

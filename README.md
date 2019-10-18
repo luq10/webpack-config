@@ -42,6 +42,40 @@ Just run `yarn run storybook`
 
 All stories should be in `/stories`
 
+## Styles
+
+You can use auto generated unique CSS class name by CSS Modules.
+
+All you should do:
+
+* Create file with `.module.scss` on end, f.e `test.module.scss`
+* Write normal styles like:
+
+```
+.button { color: red }
+.text { color: blue }
+```
+
+* Use this styles in component file
+
+```
+import styles from './test.module.scss';
+
+(...)
+
+<button className={styles.button}>
+  <span className={styles.text}>Example</span>
+</button>
+```
+
+This should render:
+
+```
+<button class="_1Bi2m4Xx6gfieBFTwE8yeb">
+  <span class="VlcDgw6EmyoYMzC9b0xxv">Example</span>
+</button>
+```
+
 # Build
 
 To build production version just run `yarn run build`, after that, 
