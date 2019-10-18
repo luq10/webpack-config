@@ -1,6 +1,6 @@
 # Technology 
 
-1. ES2015+ (Babel)
+1. Typescript
 2. React
 3. SASS
 4. Hot Module Replacement (for SASS and components)
