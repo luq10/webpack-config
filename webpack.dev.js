@@ -26,6 +26,13 @@ const config = merge(CommonConfig, {
   },
   module: {
     rules: [
+      // Babel is required for hot-loader
+      // See: https://github.com/gaearon/react-hot-loader#typescript
+      {
+        use: 'babel-loader',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/
+      },
       {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,

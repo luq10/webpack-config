@@ -42,11 +42,6 @@ const config = {
         ]
       },
       {
-        use: 'babel-loader',
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/
-      },
-      {
         use: 'file-loader?name=[path][name].[ext]',
         test: /\.(jpg|png|eot|svg|ttf|woff|woff2|otf|ico)$/
       },

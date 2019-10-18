@@ -9,6 +9,8 @@
     "moduleResolution": "node",
     "lib": ["es6", "dom"],
     "allowSyntheticDefaultImports": true,
+    "noImplicitReturns": true,
+    "strict": true,
   },
   "include": [
     "src/**/*",
