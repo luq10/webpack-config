@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import styles from './HookComponent.module.scss';
 
-const HookComponent = () => {
+const HookComponent: React.FC<{}> = () => {
   const [value, setValue] = useState(true);
 
   return (

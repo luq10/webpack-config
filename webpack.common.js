@@ -6,13 +6,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const config = {
   context: path.resolve(__dirname, 'src'),
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   // Global variable 'appConfig' (defined in ./app.config.js)
   // can be import from 'appConfig'
   externals: 'appConfig',
   entry: {
-    bundle: './index.jsx'
+    bundle: './index.tsx'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -32,6 +32,15 @@ const config = {
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'awesome-typescript-loader',
+          }
+        ]
+      },
       {
         use: 'babel-loader',
         test: /\.(js|jsx)$/,

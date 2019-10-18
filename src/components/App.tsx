@@ -1,14 +1,19 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
+import appConfig from 'appConfig';
 
 import HookComponent from './HookComponent';
 
 import img from '../assets/images/200x200.jpg';
 import './App.scss';
 
-class App extends React.Component {
+interface State {
+  data: string;
+}
+
+class App extends React.Component<{}, State> {
   state = {
-    data: null,
+    data: '',
   };
 
   async componentDidMount() {
@@ -17,9 +22,9 @@ class App extends React.Component {
     this.setState({data});
   }
 
-  async foo() {
+  async foo(): Promise<string> {
     return await new Promise((resolve) => {
-      setTimeout(() => resolve('some async data'), 1000);
+      setTimeout(() => resolve(appConfig.APP_URL), 1000);
     });
   }
 
