@@ -1,8 +1,13 @@
 module.exports = {
+  parser: "@typescript-eslint/parser",
   extends: [
-    "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
+  parserOptions:  {
+    ecmaVersion:  2018,  // Allows for the parsing of modern ECMAScript features
+    sourceType:  'module',  // Allows for the use of imports
+  },
   env: {
     browser: true,
     es6: true
@@ -11,7 +16,11 @@ module.exports = {
     "process": true,
     "module": true,
   },
-  parser: "babel-eslint",
+  settings:  {
+    react:  {
+      version:  'detect',  // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
+  },
   plugins: [
     "class-property",
     "react-hooks",
@@ -39,4 +48,12 @@ module.exports = {
       ]
     }]
   },
+  overrides: [
+    {
+      files: ["**/*.tsx"],
+      rules: {
+        "react/prop-types": "off"
+      }
+    }
+  ]
 };
