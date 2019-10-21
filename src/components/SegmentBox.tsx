@@ -1,25 +1,22 @@
 import React, { useState } from 'react';
 
-// interface MainProps {
-//   title: string;
-//   children: ((disabled: boolean) => JSX.Element) | JSX.Element;
-// }
-// interface ControlledProps extends MainProps {
-//   disabled: boolean;
-//   onChangeControl: () => void;
-// }
-//
-// type Props = MainProps | ControlledProps;
-
 type ChildrenFn = (disabled: boolean) => JSX.Element;
 type Children = ChildrenFn | JSX.Element;
 
-interface Props {
+interface CommonProps {
   title: string;
   children: Children;
-  disabled?: boolean;
-  onChangeControl?: () => void;
 }
+interface NormalProps extends CommonProps {
+  disabled?: undefined;
+  onChangeControl?: undefined;
+}
+interface ControlledProps extends CommonProps {
+  disabled: boolean;
+  onChangeControl: () => void;
+}
+
+type Props = NormalProps | ControlledProps;
 
 function isChildrenFn(children: Children): children is ChildrenFn {
   return typeof children === 'function';

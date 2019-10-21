@@ -49,6 +49,12 @@ class App extends React.Component<{}, State> {
           }
         </SegmentBox>
 
+        <SegmentBox title="Some">
+          {
+            (disabled): JSX.Element => disabled ? <span>...</span> : <span>Lorem</span>
+          }
+        </SegmentBox>
+
         <h3>{data}</h3>
 
         <img src={img} alt="Example"/>
