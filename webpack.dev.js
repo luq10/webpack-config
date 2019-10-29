@@ -12,6 +12,7 @@ const config = merge(CommonConfig, {
     publicPath: path.resolve(__dirname, '/'),
     // Server can be visible also by your IP address in LAN
     host: '0.0.0.0',
+    disableHostCheck: true,
     port: 3000,
     hot: true,
     historyApiFallback: true,
