@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
   env: {
     browser: true,
@@ -11,10 +12,18 @@ module.exports = {
     "process": true,
     "module": true,
   },
-  parser: "babel-eslint",
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
   plugins: [
     "class-property",
     "react-hooks",
+    "@typescript-eslint",
   ],
   rules: {
     "quotes": ["error", "single", { allowTemplateLiterals: true }],
@@ -37,6 +46,14 @@ module.exports = {
         '/^render.+$/',
         'render'
       ]
-    }]
+    }],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-console": "error"
   },
+  settings: {
+    react: {
+      version: "detect"
+    }
+  }
 };
