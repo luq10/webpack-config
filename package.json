@@ -8,7 +8,7 @@
     "start:fp": "webpack-dev-server --config ./webpack.dev.js --port 0",
     "build": "webpack --config ./webpack.prod.js",
     "build:dev": "webpack --config ./webpack.dev.js",
-    "lint": "eslint ./src --ext .js --ext .jsx",
+    "lint": "eslint ./src --ext .ts --ext .tsx",
     "test": "mocha",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
@@ -21,7 +21,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
+    "src/**/*.{ts,tsx}": [
       "eslint"
     ]
   },
