@@ -45,7 +45,14 @@ const config = {
           },
         ],
         test: /\.scss$/
-      }
+      },
+      {
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+        test: /\.css/,
+      },
     ]
   },
   plugins: [
