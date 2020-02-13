@@ -19,17 +19,6 @@ const config = {
     filename: '[name].[chunkhash].js',
     publicPath: '/',
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all'
-        }
-      }
-    }
-  },
   module: {
     rules: [
       {
