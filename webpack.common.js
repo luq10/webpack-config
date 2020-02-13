@@ -47,6 +47,13 @@ const config = {
         test: /\.scss$/,
         exclude: /\.module\.scss$/,
       },
+      {
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+        test: /\.css/,
+      },
     ]
   },
   plugins: [
