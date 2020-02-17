@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import styles from './HookComponent.module.scss';
+import styles from "./HookComponent.module.scss";
 
 const HookComponent: React.FC<{}> = () => {
   const [value, setValue] = useState(true);
 
   return (
     <button className={styles.button} onClick={() => setValue((val) => !val)}>
-      <span className={styles.text}>{ value ? 'On' : 'Off' }</span>
+      <span className={styles.text}>{ value ? "On" : "Off" }</span>
     </button>
   );
 };

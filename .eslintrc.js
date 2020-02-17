@@ -26,7 +26,7 @@ module.exports = {
     "@typescript-eslint",
   ],
   rules: {
-    "quotes": ["error", "single", { allowTemplateLiterals: true }],
+    "quotes": ["error", "double", { allowTemplateLiterals: true }],
     "prefer-const": "error",
     "no-var": "error",
     "comma-dangle": ["error", "only-multiline"],
@@ -47,8 +47,7 @@ module.exports = {
         'render'
       ]
     }],
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": ["error", { allowExpressions: true }],
     "no-console": "error",
     "react/prop-types": "off",
   },

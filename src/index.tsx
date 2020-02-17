@@ -1,14 +1,14 @@
 // For async/await
-import '@babel/polyfill';
+import "@babel/polyfill";
 
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
-import App from './components/App';
+import App from "./components/App";
 
-import './assets/styles/index.scss';
+import "./assets/styles/index.scss";
 
 ReactDOM.render(
   <App/>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

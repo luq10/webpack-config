@@ -1,11 +1,11 @@
-import { hot } from 'react-hot-loader/root';
-import React from 'react';
-import appConfig from 'appConfig';
+import { hot } from "react-hot-loader/root";
+import React from "react";
+import appConfig from "appConfig";
 
-import HookComponent from './HookComponent';
+import HookComponent from "./HookComponent";
 
-import img from '../assets/images/200x200.jpg';
-import './App.scss';
+import img from "../assets/images/200x200.jpg";
+import "./App.scss";
 
 interface State {
   data: string;
@@ -13,10 +13,10 @@ interface State {
 
 class App extends React.Component<{}, State> {
   state = {
-    data: '',
+    data: "",
   };
 
-  async componentDidMount() {
+  async componentDidMount(): Promise<void> {
     const data = await this.foo();
 
     this.setState({data});
@@ -28,7 +28,7 @@ class App extends React.Component<{}, State> {
     });
   }
 
-  render() {
+  render(): React.ReactNode {
     const {data} = this.state;
 
     return (
