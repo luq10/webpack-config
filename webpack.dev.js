@@ -49,7 +49,9 @@ const config = merge(CommonConfig, {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules: {
+                localIdentName: '[local]___[hash:base64:6]',
+              },
               sourceMap: true,
             },
           },
