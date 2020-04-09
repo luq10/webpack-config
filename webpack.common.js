@@ -1,24 +1,24 @@
-const path = require('path');
+const path = require("path");
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const config = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, "src"),
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: [".js", ".jsx", ".ts", ".tsx"]
   },
-  // Global variable 'appConfig' (defined in ./app.config.js)
-  // can be import from 'appConfig'
-  externals: 'appConfig',
+  // Global variable "appConfig" (defined in ./app.config.js)
+  // can be import from "appConfig"
+  externals: "appConfig",
   entry: {
-    bundle: './index.tsx'
+    bundle: "./index.tsx"
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js',
-    publicPath: '/',
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[chunkhash].js",
+    chunkFilename: "[name].[chunkhash].js",
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -27,24 +27,24 @@ const config = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'awesome-typescript-loader',
+            loader: "awesome-typescript-loader",
           }
         ]
       },
       {
-        use: 'file-loader?name=[path][name].[ext]',
+        use: "file-loader?name=[path][name].[ext]",
         test: /\.(jpg|png|eot|svg|ttf|woff|woff2|otf|ico)$/
       },
       {
         use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
+          "style-loader",
+          "css-loader",
+          "sass-loader",
           // Share SASS variables, mixins and functions with all .sass files
           {
-            loader: 'sass-resources-loader',
+            loader: "sass-resources-loader",
             options: {
-              resources: path.resolve(__dirname, 'src/assets/styles/sass-resources.scss'),
+              resources: path.resolve(__dirname, "src/assets/styles/sass-resources.scss"),
             },
           },
         ],
@@ -53,8 +53,8 @@ const config = {
       },
       {
         use: [
-          'style-loader',
-          'css-loader',
+          "style-loader",
+          "css-loader",
         ],
         test: /\.css/,
       },
@@ -63,7 +63,7 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: "./index.html",
       // Add query string hash to app.config.js loaded in index.html
       configHash: +new Date()
     })
