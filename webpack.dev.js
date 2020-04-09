@@ -77,7 +77,12 @@ const config = merge(CommonConfig, {
       {from: "../app.config.js", to: "./app.config.js"},
       {from: "./assets/images/favicon.png", to: "./assets/images/favicon.png"}
     ])
-  ]
+  ],
+  // Necessary for file changes inside the Docker
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000
+  }
 });
 
 module.exports = config;
