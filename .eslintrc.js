@@ -14,7 +14,7 @@ module.exports = {
     "class-property",
   ],
   rules: {
-    "quotes": ["error", "single", { allowTemplateLiterals: true }],
+    "quotes": ["error", "double", { allowTemplateLiterals: true }],
     "prefer-const": "error",
     "no-var": "error",
     "comma-dangle": ["error", "only-multiline"],
@@ -22,5 +22,6 @@ module.exports = {
     "semi": ["error", "always"],
     "max-len": ["error", {code: 120}],
     "class-property/class-property-semicolon": ["error", "always"],
+    "no-console": "error",
   },
 };

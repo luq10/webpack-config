@@ -1,30 +1,30 @@
-const path = require('path');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
+const path = require("path");
+const webpack = require("webpack");
+const merge = require("webpack-merge");
 
-const CommonConfig = require('./webpack.common.js');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CommonConfig = require("./webpack.common.js");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const config = merge(CommonConfig, {
-  devtool: 'cheap-module-source-map',
-  mode: 'development',
+  devtool: "cheap-module-source-map",
+  mode: "development",
   devServer: {
-    publicPath: path.resolve(__dirname, '/'),
+    publicPath: path.resolve(__dirname, "/"),
     // Server can be visible also by your IP address in LAN
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     port: 3000,
     hot: true
   },
   output: merge(CommonConfig.output, {
     // Cannot use [chunkhash] for chunk when use HMR
-    filename: '[name].[hash].js'
+    filename: "[name].[hash].js"
   }),
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'eslint-loader',
+        loader: "eslint-loader",
         options: {
           emitWarning: true,
         },
@@ -33,8 +33,8 @@ const config = merge(CommonConfig, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('development')
+      "process.env": {
+        "NODE_ENV": JSON.stringify("development")
       }
     }),
 
@@ -45,8 +45,8 @@ const config = merge(CommonConfig, {
     // On production env, this thing will be made by CI
     new CopyWebpackPlugin({
       patterns: [
-        {from: '../app.config.js', to: './app.config.js'},
-        {from: './assets/images/favicon.png', to: './assets/images/favicon.png'}
+        {from: "../app.config.js", to: "./app.config.js"},
+        {from: "./assets/images/favicon.png", to: "./assets/images/favicon.png"}
       ]
     })
   ]
