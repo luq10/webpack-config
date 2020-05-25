@@ -6,8 +6,8 @@ export default {
   title: "UI/Button",
 };
 
-export const Default = () => <Button>Hello Button</Button>;
-export const WithEmoji = () => (
+export const Default = (): React.ReactNode => <Button>Hello Button</Button>;
+export const WithEmoji = (): React.ReactNode => (
   <Button>
     <span role="img" aria-label="so cool">
       😀 😎 👍 💯
