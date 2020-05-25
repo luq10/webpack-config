@@ -13,12 +13,6 @@
     "strict": true,
     "experimentalDecorators": true
   },
-  "include": [
-    "src/**/*",
-    "@types/**/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+  "include": ["src/**/*", "@types/**/*.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
