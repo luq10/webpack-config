@@ -9,6 +9,11 @@ module.exports = {
     process: true,
     module: true,
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   parser: "babel-eslint",
   plugins: ["class-property", "react-hooks"],
   rules: {
