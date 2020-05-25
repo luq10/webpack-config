@@ -10,7 +10,8 @@
     "build:dev": "webpack --config ./webpack.dev.js",
     "lint": "eslint ./src --ext .js --ext .jsx",
     "test": "jest",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build:storybook": "build-storybook --loglevel warn --quiet -c .storybook"
   },
   "husky": {
     "hooks": {
@@ -34,7 +35,7 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "@hot-loader/react-dom": "^16.13.0",
-    "@storybook/addon-info": "^5.3.17",
+    "@storybook/addon-docs": "^5.3.19",
     "@storybook/react": "^5.3.17",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
