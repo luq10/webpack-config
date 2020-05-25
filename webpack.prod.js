@@ -17,9 +17,11 @@ const config = Merge(CommonConfig, {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new CopyWebpackPlugin([
-      {from: './assets/images/favicon.png', to: './assets/images/favicon.png'}
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: './assets/images/favicon.png', to: './assets/images/favicon.png'}
+      ]
+    }),
     new CompressionPlugin({
       filename: "[path].gz[query]",
       algorithm: "gzip",

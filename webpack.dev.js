@@ -43,10 +43,12 @@ const config = merge(CommonConfig, {
     // Copy app.config to /dist folder.
     //
     // On production env, this thing will be made by CI
-    new CopyWebpackPlugin([
-      {from: '../app.config.js', to: './app.config.js'},
-      {from: './assets/images/favicon.png', to: './assets/images/favicon.png'}
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: '../app.config.js', to: './app.config.js'},
+        {from: './assets/images/favicon.png', to: './assets/images/favicon.png'}
+      ]
+    })
   ]
 });
 
