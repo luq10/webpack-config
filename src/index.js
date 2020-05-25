@@ -11,4 +11,3 @@ console.log(sum(100, 2000));
 
 // eslint-disable-next-line no-console
 console.log("appConfig", appConfig);
-

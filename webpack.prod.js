@@ -14,22 +14,20 @@ const config = Merge(CommonConfig, {
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
-        "NODE_ENV": JSON.stringify("production")
-      }
+        NODE_ENV: JSON.stringify("production"),
+      },
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        {from: "./assets/images/favicon.png", to: "./assets/images/favicon.png"}
-      ]
+      patterns: [{ from: "./assets/images/favicon.png", to: "./assets/images/favicon.png" }],
     }),
     new CompressionPlugin({
       filename: "[path].gz[query]",
       algorithm: "gzip",
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
-      minRatio: 0.8
-    })
-  ]
+      minRatio: 0.8,
+    }),
+  ],
 });
 
 module.exports = config;

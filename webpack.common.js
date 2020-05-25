@@ -6,13 +6,13 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const config = {
   context: path.resolve(__dirname, "src"),
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
   },
   // Global variable "appConfig" (defined in ./app.config.js)
   // can be import from "appConfig"
   externals: "appConfig",
   entry: {
-    bundle: "./index.js"
+    bundle: "./index.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -25,11 +25,11 @@ const config = {
       {
         use: "babel-loader",
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         use: "file-loader?name=[path][name].[ext]",
-        test: /\.(jpg|png|eot|svg|ttf|woff|woff2|otf|ico)$/
+        test: /\.(jpg|png|eot|svg|ttf|woff|woff2|otf|ico)$/,
       },
       {
         use: [
@@ -44,25 +44,22 @@ const config = {
             },
           },
         ],
-        test: /\.scss$/
+        test: /\.scss$/,
       },
       {
-        use: [
-          "style-loader",
-          "css-loader",
-        ],
+        use: ["style-loader", "css-loader"],
         test: /\.css/,
       },
-    ]
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./index.html",
       // Add query string hash to app.config.js loaded in index.html
-      configHash: +new Date()
-    })
-  ]
+      configHash: +new Date(),
+    }),
+  ],
 };
 
 module.exports = config;

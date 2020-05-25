@@ -13,11 +13,11 @@ const config = merge(CommonConfig, {
     // Server can be visible also by your IP address in LAN
     host: "0.0.0.0",
     port: 3000,
-    hot: true
+    hot: true,
   },
   output: merge(CommonConfig.output, {
     // Cannot use [chunkhash] for chunk when use HMR
-    filename: "[name].[hash].js"
+    filename: "[name].[hash].js",
   }),
   module: {
     rules: [
@@ -34,8 +34,8 @@ const config = merge(CommonConfig, {
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
-        "NODE_ENV": JSON.stringify("development")
-      }
+        NODE_ENV: JSON.stringify("development"),
+      },
     }),
 
     new webpack.HotModuleReplacementPlugin(),
@@ -45,11 +45,11 @@ const config = merge(CommonConfig, {
     // On production env, this thing will be made by CI
     new CopyWebpackPlugin({
       patterns: [
-        {from: "../app.config.js", to: "./app.config.js"},
-        {from: "./assets/images/favicon.png", to: "./assets/images/favicon.png"}
-      ]
-    })
-  ]
+        { from: "../app.config.js", to: "./app.config.js" },
+        { from: "./assets/images/favicon.png", to: "./assets/images/favicon.png" },
+      ],
+    }),
+  ],
 });
 
 module.exports = config;
