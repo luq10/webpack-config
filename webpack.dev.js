@@ -19,7 +19,7 @@ const config = merge(CommonConfig, {
   },
   output: merge(CommonConfig.output, {
     // Cannot use [chunkhash] for chunk when use HMR
-    filename: "[name].[hash].js"
+    filename: "[name].[hash].js",
   }),
   resolve: {
     alias: {
@@ -57,15 +57,15 @@ const config = merge(CommonConfig, {
             },
           },
         ],
-        test: /\.module\.scss$/
-      }
+        test: /\.module\.scss$/,
+      },
     ],
   },
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
-        "NODE_ENV": JSON.stringify("development")
-      }
+        NODE_ENV: JSON.stringify("development"),
+      },
     }),
 
     new webpack.HotModuleReplacementPlugin(),
@@ -73,16 +73,18 @@ const config = merge(CommonConfig, {
     // Copy app.config to /dist folder.
     //
     // On production env, this thing will be made by CI
-    new CopyWebpackPlugin([
-      {from: "../app.config.js", to: "./app.config.js"},
-      {from: "./assets/images/favicon.png", to: "./assets/images/favicon.png"}
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "../app.config.js", to: "./app.config.js" },
+        { from: "./assets/images/favicon.png", to: "./assets/images/favicon.png" },
+      ],
+    }),
   ],
   // Necessary for file changes inside the Docker
   watchOptions: {
     aggregateTimeout: 300,
-    poll: 1000
-  }
+    poll: 1000,
+  },
 });
 
 module.exports = config;

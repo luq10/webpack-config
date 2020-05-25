@@ -9,19 +9,20 @@
     "build": "webpack --config ./webpack.prod.js",
     "build:dev": "webpack --config ./webpack.dev.js",
     "lint": "eslint ./src --ext .ts --ext .tsx",
+    "test": "jest",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "jest"
+    "build:storybook": "build-storybook --loglevel warn --quiet -c .storybook"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged && npm test"
+    }
   },
   "engines": {
     "node": ">=12.0.0 <13.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm test"
-    }
-  },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
+    "(src|stories)/**/*.{ts,tsx}": [
       "eslint"
     ]
   },
@@ -29,7 +30,7 @@
   "license": "ISC",
   "devDependencies": {
     "@hot-loader/react-dom": "^16.10.2",
-    "@storybook/addon-info": "^5.0.11",
+    "@storybook/addon-docs": "^5.3.19",
     "@storybook/preset-typescript": "3.0.0",
     "@storybook/react": "^5.0.11",
     "@types/jest": "^25.2.1",
@@ -42,28 +43,28 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
-    "compression-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.0.3",
+    "compression-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^6.0.1",
     "css-loader": "^3.2.0",
-    "eslint": "^6.5.1",
-    "eslint-loader": "^3.0.2",
+    "eslint": "^7.1.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-class-property": "^1.1.0",
     "eslint-plugin-react": "^7.12.2",
     "eslint-plugin-react-hooks": "^3.0.0",
-    "expect": "^25.3.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.3",
     "husky": "^4.2.3",
-    "jest": "^25.3.0",
+    "jest": "^26.0.1",
     "lint-staged": "^10.1.0",
     "node-sass": "^4.12.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "react-docgen-typescript-loader": "^3.6.0",
     "react-hot-loader": "^4.12.15",
     "sass-loader": "^8.0.0",
     "sass-resources-loader": "^2.0.0",
     "style-loader": "^1.0.0",
     "ts-jest": "^25.3.1",
-    "ts-loader": "^6.2.1",
     "typescript": "^3.6.4",
     "webpack": "^4.32.0",
     "webpack-cli": "^3.3.2",
