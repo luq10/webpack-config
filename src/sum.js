@@ -1,10 +1,10 @@
-// import {lodash} from 'lodash';
+// import {lodash} from "lodash";
 
 const sum = (a, b) => a + b;
 
 export default sum;
 
-const foo = () => 'Some some some some some some some some some some some some some some some some some some some some';
+const foo = () => "Some some some some some some some some some some some some some some some some some some some some";
 
 foo();
 
@@ -22,7 +22,7 @@ new Foo();
 
 async function asyncAction() {
   return await new Promise((resolve) => {
-    setTimeout(() => resolve('some async data'), 1000);
+    setTimeout(() => resolve("some async data"), 1000);
   });
 }
 
@@ -31,7 +31,6 @@ async function doWork() {
 
   // eslint-disable-next-line no-console
   console.log(`message = ${data}`);
-
 }
 
 doWork();

@@ -8,7 +8,7 @@
     "start:fp": "webpack-dev-server --config ./webpack.dev.js --port 0",
     "build": "webpack --config ./webpack.prod.js",
     "build:dev": "webpack --config ./webpack.dev.js",
-    "lint": "eslint ./src --ext .js --ext .jsx",
+    "lint": "eslint ./src",
     "test": "mocha"
   },
   "husky": {
@@ -20,7 +20,7 @@
     "node": ">=12.0.0 <13.0.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
+    "src/**/*": [
       "eslint"
     ]
   },
