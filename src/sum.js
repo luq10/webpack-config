@@ -13,9 +13,7 @@ class Foo {
     a: 1,
   };
 
-  foo() {
-
-  }
+  foo() {}
 }
 
 new Foo();
