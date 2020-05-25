@@ -1,18 +1,18 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = async ({ config }) => {
   config.module.rules.push({
     test: /\.scss$/,
     exclude: /\.module\.scss$/,
     use: [
-      'style-loader',
-      'css-loader',
-      'sass-loader',
+      "style-loader",
+      "css-loader",
+      "sass-loader",
       // Share SASS variables, mixins and functions with all .sass files
       {
-        loader: 'sass-resources-loader',
+        loader: "sass-resources-loader",
         options: {
-          resources: path.resolve(__dirname, '../src/assets/styles/sass-resources.scss'),
+          resources: path.resolve(__dirname, "../src/assets/styles/sass-resources.scss"),
         },
       },
     ],
@@ -21,23 +21,23 @@ module.exports = async ({ config }) => {
   config.module.rules.push({
     test: /\.module\.scss$/,
     use: [
-      'style-loader',
+      "style-loader",
       {
-        loader: 'css-loader',
+        loader: "css-loader",
         options: {
           modules: true,
           sourceMap: true,
         },
       },
-      'sass-loader',
+      "sass-loader",
       // Share SASS variables, mixins and functions with all .sass files
       {
-        loader: 'sass-resources-loader',
+        loader: "sass-resources-loader",
         options: {
-          resources: path.resolve(__dirname, '../src/assets/styles/sass-resources.scss'),
+          resources: path.resolve(__dirname, "../src/assets/styles/sass-resources.scss"),
         },
       },
-    ]
+    ],
   });
 
   return config;
