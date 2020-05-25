@@ -2,7 +2,19 @@ const path = require("path");
 
 module.exports = {
   stories: ["../stories/**/*.tsx"],
-  addons: ["@storybook/preset-typescript", "@storybook/react", "@storybook/addon-docs"],
+  addons: [
+    {
+      name: "@storybook/preset-typescript",
+      options: {
+        tsLoaderOptions: {
+          configFile: path.resolve(__dirname, "../tsconfig.json"),
+        },
+        include: [path.resolve(__dirname)],
+      },
+    },
+    "@storybook/react",
+    "@storybook/addon-docs",
+  ],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,
