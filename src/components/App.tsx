@@ -4,7 +4,7 @@ import React from "react";
 import Component from "./Component";
 import HookComponent from "./HookComponent";
 
-const App: React.FC<{}> = () => {
+const App: React.FC = () => {
   return (
     <div>
       <Component />

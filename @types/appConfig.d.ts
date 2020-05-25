@@ -1,4 +1,4 @@
-declare module 'appConfig' {
+declare module "appConfig" {
   interface AppConfigInterface {
     APP_URL: string;
   }

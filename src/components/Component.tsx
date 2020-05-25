@@ -7,7 +7,7 @@ interface State {
   data: string;
 }
 
-class Component extends React.Component<{}, State> {
+class Component extends React.Component<unknown, State> {
   state: State = {
     data: "",
   };
