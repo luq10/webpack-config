@@ -73,7 +73,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
