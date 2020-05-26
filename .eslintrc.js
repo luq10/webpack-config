@@ -54,7 +54,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: "*.ts",
+      files: ["*.ts", "*.tsx"],
       rules: {
         // Fix collision between rules:
         //
