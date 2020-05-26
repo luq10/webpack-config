@@ -52,4 +52,16 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": ["error", { allowExpressions: true }],
     "react/prop-types": "off",
   },
+  overrides: [
+    {
+      files: "*.ts",
+      rules: {
+        // Fix collision between rules:
+        //
+        // ESLint: Unnecessary semicolon.(@typescript-eslint/no-extra-semi)
+        // ESLint: Missing semicolon.(semi)
+        semi: ["off"],
+      },
+    },
+  ],
 };
