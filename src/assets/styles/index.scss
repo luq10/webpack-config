@@ -1,3 +1,11 @@
+@import "~normalize.css/normalize.css";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   background: darken($primary, 20%);
   color: $secondary;
