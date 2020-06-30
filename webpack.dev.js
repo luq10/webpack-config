@@ -1,9 +1,10 @@
 const path = require("path");
 const webpack = require("webpack");
 const merge = require("webpack-merge");
-
-const CommonConfig = require("./webpack.common.js");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+
+const { createCommonConfig } = require("./webpack.common.js");
+const CommonConfig = createCommonConfig("development");
 
 const config = merge(CommonConfig, {
   devtool: "cheap-module-source-map",
@@ -35,29 +36,6 @@ const config = merge(CommonConfig, {
         options: {
           emitWarning: true,
         },
-      },
-      {
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              modules: {
-                localIdentName: "[local]___[hash:base64:6]",
-              },
-              sourceMap: true,
-            },
-          },
-          "sass-loader",
-          // Share SASS variables, mixins and functions with all .sass files
-          {
-            loader: "sass-resources-loader",
-            options: {
-              resources: path.resolve(__dirname, "src/assets/styles/sass-resources.scss"),
-            },
-          },
-        ],
-        test: /\.module\.scss$/,
       },
     ],
   },

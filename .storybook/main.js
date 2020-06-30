@@ -1,5 +1,7 @@
 const path = require("path");
 
+const { getSassUse } = require("../webpack.common.js");
+
 module.exports = {
   stories: ["../stories/**/*.jsx"],
   addons: ["@storybook/react", "@storybook/addon-docs"],
@@ -7,42 +9,16 @@ module.exports = {
     config.module.rules.push({
       test: /\.scss$/,
       exclude: /\.module\.scss$/,
-      use: [
-        "style-loader",
-        "css-loader",
-        "sass-loader",
-        // Share SASS variables, mixins and functions with all .sass files
-        {
-          loader: "sass-resources-loader",
-          options: {
-            resources: path.resolve(__dirname, "../src/assets/styles/sass-resources.scss"),
-          },
-        },
-      ],
+      use: getSassUse({
+        cssModulesMode: null,
+      }),
     });
 
     config.module.rules.push({
       test: /\.module\.scss$/,
-      use: [
-        "style-loader",
-        {
-          loader: "css-loader",
-          options: {
-            modules: {
-              localIdentName: "[local]___[hash:base64:6]",
-            },
-            sourceMap: true,
-          },
-        },
-        "sass-loader",
-        // Share SASS variables, mixins and functions with all .sass files
-        {
-          loader: "sass-resources-loader",
-          options: {
-            resources: path.resolve(__dirname, "../src/assets/styles/sass-resources.scss"),
-          },
-        },
-      ],
+      use: getSassUse({
+        cssModulesMode: "development",
+      }),
     });
 
     return config;
