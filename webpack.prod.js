@@ -4,42 +4,14 @@ const Merge = require("webpack-merge");
 const CompressionPlugin = require("compression-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const CommonConfig = require("./webpack.common.js");
+const { createCommonConfig } = require("./webpack.common.js");
+const CommonConfig = createCommonConfig("production");
 
 const config = Merge(CommonConfig, {
   devtool: "source-map",
   mode: "production",
   optimization: {
     minimize: true,
-  },
-  module: {
-    rules: [
-      // TODO:
-      //
-      // Define loaders for files test: /\.module\.scss$/ in common
-      // here, we need only disable sourceMap for "css-loader"
-      {
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              sourceMap: false,
-            },
-          },
-          "sass-loader",
-          // Share SASS variables, mixins and functions with all .sass files
-          {
-            loader: "sass-resources-loader",
-            options: {
-              resources: path.resolve(__dirname, "src/assets/styles/sass-resources.scss"),
-            },
-          },
-        ],
-        test: /\.module\.scss$/,
-      },
-    ],
   },
   plugins: [
     new webpack.DefinePlugin({
